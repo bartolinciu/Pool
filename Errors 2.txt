@@ -1,0 +1,17 @@
+$ make
+g++ -std=c++17 -ggdb   -c -o classes.o code/classes.cpp
+code/classes.cpp: In constructor 'Game::Game()':
+code/classes.cpp:141:16: error: request for member 'show' in '((Game*)this)->Game::Player1', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+  this->Player1.show();
+                ^~~~
+code/classes.cpp: In member function 'void Game::run()':
+code/classes.cpp:160:17: error: request for member 'draw' in '((Game*)this)->Game::Player1', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+   this->Player1.draw( dt );
+                 ^~~~
+code/classes.cpp:161:17: error: request for member 'draw' in '((Game*)this)->Game::Player2', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+   this->Player2.draw( dt );
+                 ^~~~
+code/classes.cpp:266:23: error: expected primary-expression before ')' token
+   if(  !hit_band && ! ){
+                       ^
+make: *** [classes.o] Error 1

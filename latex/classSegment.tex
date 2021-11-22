@@ -1,0 +1,92 @@
+\hypertarget{classSegment}{}\doxysection{Segment Class Reference}
+\label{classSegment}\index{Segment@{Segment}}
+
+
+{\ttfamily \#include $<$classes.\+h$>$}
+
+
+
+Collaboration diagram for Segment\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classSegment__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSegment_ad93d2b5a749c88e15a61618890374312}{Segment}} (double ax, double ay, double bx, double by)
+\item 
+bool \mbox{\hyperlink{classSegment_a7d248a2416c82336000aa7c15bc98b37}{check\+\_\+collision}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$ ball)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSegment_adccf25d63da0a3e5237050c4eb3b6be4}\label{classSegment_adccf25d63da0a3e5237050c4eb3b6be4}} 
+double \mbox{\hyperlink{classSegment_adccf25d63da0a3e5237050c4eb3b6be4}{x}}
+\begin{DoxyCompactList}\small\item\em x coordinate of initial point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSegment_aba4eb12927d2167032feed9e783196b4}\label{classSegment_aba4eb12927d2167032feed9e783196b4}} 
+double \mbox{\hyperlink{classSegment_aba4eb12927d2167032feed9e783196b4}{y}}
+\begin{DoxyCompactList}\small\item\em y coordinate of initial point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSegment_abe332f3cb4585b8523ff9f428d49efc4}\label{classSegment_abe332f3cb4585b8523ff9f428d49efc4}} 
+double \mbox{\hyperlink{classSegment_abe332f3cb4585b8523ff9f428d49efc4}{xv}}
+\begin{DoxyCompactList}\small\item\em x component of direction vector of the segment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSegment_a492c9938d2d235eb16535c6942d6ed33}\label{classSegment_a492c9938d2d235eb16535c6942d6ed33}} 
+double \mbox{\hyperlink{classSegment_a492c9938d2d235eb16535c6942d6ed33}{yv}}
+\begin{DoxyCompactList}\small\item\em y component of direction vector of the segment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSegment_ab4d6e290313b7231867683a504bd7f85}\label{classSegment_ab4d6e290313b7231867683a504bd7f85}} 
+double \mbox{\hyperlink{classSegment_ab4d6e290313b7231867683a504bd7f85}{l}}
+\begin{DoxyCompactList}\small\item\em length of segment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSegment_aff34a635f776289ee8fb112e4ac9eaed}\label{classSegment_aff34a635f776289ee8fb112e4ac9eaed}} 
+class {\bfseries Ball}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class used to represent boundaries of the table and check for collisions 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSegment_ad93d2b5a749c88e15a61618890374312}\label{classSegment_ad93d2b5a749c88e15a61618890374312}} 
+\index{Segment@{Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}}
+{\footnotesize\ttfamily Segment\+::\+Segment (\begin{DoxyParamCaption}\item[{double}]{ax,  }\item[{double}]{ay,  }\item[{double}]{bx,  }\item[{double}]{by }\end{DoxyParamCaption})}
+
+constructor generating segment from end points 
+\begin{DoxyParams}{Parameters}
+{\em ax} & x coordinate of initial point \\
+\hline
+{\em ay} & y coordinate of initial point \\
+\hline
+{\em bx} & x coordinate of terminal point \\
+\hline
+{\em by} & y coordinate of terminal point \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSegment_a7d248a2416c82336000aa7c15bc98b37}\label{classSegment_a7d248a2416c82336000aa7c15bc98b37}} 
+\index{Segment@{Segment}!check\_collision@{check\_collision}}
+\index{check\_collision@{check\_collision}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{check\_collision()}{check\_collision()}}
+{\footnotesize\ttfamily bool Segment\+::check\+\_\+collision (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$}]{ball }\end{DoxyParamCaption})}
+
+function for checking collision with ball 
+\begin{DoxyParams}{Parameters}
+{\em ball} & shared pointer to ball to check collision against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if collision has occured 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_8h}{classes.\+h}}\item 
+classes.\+cpp\end{DoxyCompactItemize}

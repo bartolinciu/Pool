@@ -1,0 +1,197 @@
+\hypertarget{classGame}{}\doxysection{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+
+
+Collaboration diagram for Game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_ad59df6562a58a614fda24622d3715b65}\label{classGame_ad59df6562a58a614fda24622d3715b65}} 
+\mbox{\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em constructor taking care of initialising S\+DL, creating window and loading textures \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}\label{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}} 
+void \mbox{\hyperlink{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}} ()
+\begin{DoxyCompactList}\small\item\em main loop of the game \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}} 
+\mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em destructor takes care of proper release of S\+DL resources \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_a2b2a238da8959c617d3a7e7e6f7e7cbc}\label{classGame_a2b2a238da8959c617d3a7e7e6f7e7cbc}} 
+enum \{ \newline
+{\bfseries W\+A\+I\+T\+I\+NG}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+B\+A\+LL}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+C\+UE}, 
+{\bfseries S\+E\+T\+T\+I\+N\+G\+\_\+\+P\+O\+W\+ER}, 
+\newline
+{\bfseries R\+O\+L\+L\+I\+NG}, 
+{\bfseries E\+ND}
+ \}
+\begin{DoxyCompactList}\small\item\em current state of the game \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classGame_a0740c7ec659381d9214400be2d50bb3b}{load\+Texture}} (const char $\ast$fname)
+\item 
+\mbox{\Hypertarget{classGame_a15ddd769261d923827a3cdf41499c843}\label{classGame_a15ddd769261d923827a3cdf41499c843}} 
+void \mbox{\hyperlink{classGame_a15ddd769261d923827a3cdf41499c843}{render}} ()
+\begin{DoxyCompactList}\small\item\em function rendering elements that cannot be timeouted \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a698430daa658033e7746e3a161a859a9}\label{classGame_a698430daa658033e7746e3a161a859a9}} 
+void \mbox{\hyperlink{classGame_a698430daa658033e7746e3a161a859a9}{handle\+\_\+events}} ()
+\begin{DoxyCompactList}\small\item\em function taking care of S\+DL events -\/ moving mouse, keypresses, closing window e.\+t.\+c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_a8ca5b9f8a62990e6022de17785beac2c}\label{classGame_a8ca5b9f8a62990e6022de17785beac2c}} 
+bool \mbox{\hyperlink{classGame_a8ca5b9f8a62990e6022de17785beac2c}{running}}
+\begin{DoxyCompactList}\small\item\em if this flag is 0, the game stops \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a09d8c8736315159ac702b39f987871fe}\label{classGame_a09d8c8736315159ac702b39f987871fe}} 
+Uint32 \mbox{\hyperlink{classGame_a09d8c8736315159ac702b39f987871fe}{last\+Loop}}
+\begin{DoxyCompactList}\small\item\em variable for measuring time between frames \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_adc376cc3011b5c8f1c3897626100174c}\label{classGame_adc376cc3011b5c8f1c3897626100174c}} 
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{classGame_adc376cc3011b5c8f1c3897626100174c}{window}}
+\begin{DoxyCompactList}\small\item\em pointer to the window \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a2559049fff1381f7607044c4846f1650}\label{classGame_a2559049fff1381f7607044c4846f1650}} 
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{classGame_a2559049fff1381f7607044c4846f1650}{r}}
+\begin{DoxyCompactList}\small\item\em pointer to S\+DL rendering context \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_afb57b6ee9aa8e666a98a616ead8c4e6a}\label{classGame_afb57b6ee9aa8e666a98a616ead8c4e6a}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classGame_afb57b6ee9aa8e666a98a616ead8c4e6a}{table}}
+\begin{DoxyCompactList}\small\item\em pointer to table texture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ac35b423a419b5f442349ae60013ac1e0}\label{classGame_ac35b423a419b5f442349ae60013ac1e0}} 
+std\+::vector$<$ S\+D\+L\+\_\+\+Texture $\ast$ $>$ \mbox{\hyperlink{classGame_ac35b423a419b5f442349ae60013ac1e0}{ball\+\_\+textures}}
+\begin{DoxyCompactList}\small\item\em vector of pointers to ball textures \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ab8bd87bcd61241421681cdaa23d33be0}\label{classGame_ab8bd87bcd61241421681cdaa23d33be0}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classGame_ab8bd87bcd61241421681cdaa23d33be0}{cue}}
+\begin{DoxyCompactList}\small\item\em pointer to cue texture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ac7743b546ee22acc4a46b27dd0649474}\label{classGame_ac7743b546ee22acc4a46b27dd0649474}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classGame_ac7743b546ee22acc4a46b27dd0649474}{power\+\_\+background}}
+\begin{DoxyCompactList}\small\item\em pointer to texture of powerbar background \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aab666a495e50b676ec61151a80190458}\label{classGame_aab666a495e50b676ec61151a80190458}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classGame_aab666a495e50b676ec61151a80190458}{power\+\_\+foreground}}
+\begin{DoxyCompactList}\small\item\em pointer to texture of powerbar foreground \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_acc3e80f90ace16b2be18b6aa6bb6cfab}\label{classGame_acc3e80f90ace16b2be18b6aa6bb6cfab}} 
+bool \mbox{\hyperlink{classGame_acc3e80f90ace16b2be18b6aa6bb6cfab}{player\+\_\+one\+\_\+turn}} = true
+\begin{DoxyCompactList}\small\item\em flag showing whose move it is \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aa535a2cdaecb5f95b054409323f2f9b3}\label{classGame_aa535a2cdaecb5f95b054409323f2f9b3}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$ $>$ \mbox{\hyperlink{classGame_aa535a2cdaecb5f95b054409323f2f9b3}{balls}}
+\begin{DoxyCompactList}\small\item\em vector storing pointers to all balls(ones on the table and pocketed ones) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a8ef1e0a70d00de19adad4ca087700ef9}\label{classGame_a8ef1e0a70d00de19adad4ca087700ef9}} 
+enum Game\+:: \{ ... \}  \mbox{\hyperlink{classGame_a8ef1e0a70d00de19adad4ca087700ef9}{state}}
+\begin{DoxyCompactList}\small\item\em current state of the game \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a789d7d1453f17dd34390deffef119372}\label{classGame_a789d7d1453f17dd34390deffef119372}} 
+int \mbox{\hyperlink{classGame_a789d7d1453f17dd34390deffef119372}{last\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em variable tracking mouse movement along vertical axis to set strike power \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_adb36e9eb2de29eea7f52f38a05ca7395}\label{classGame_adb36e9eb2de29eea7f52f38a05ca7395}} 
+int \mbox{\hyperlink{classGame_adb36e9eb2de29eea7f52f38a05ca7395}{solids\+\_\+left}} = 7
+\begin{DoxyCompactList}\small\item\em number of solid balls left on table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aa3eb8ea6eba338c3f49353d8be0c8579}\label{classGame_aa3eb8ea6eba338c3f49353d8be0c8579}} 
+int \mbox{\hyperlink{classGame_aa3eb8ea6eba338c3f49353d8be0c8579}{stripes\+\_\+left}} = 7
+\begin{DoxyCompactList}\small\item\em number of striped balls left on table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aee7dde3ebe3b240d378628637984c2ab}\label{classGame_aee7dde3ebe3b240d378628637984c2ab}} 
+std\+::vector$<$ \mbox{\hyperlink{classSegment}{Segment}} $\ast$ $>$ \mbox{\hyperlink{classGame_aee7dde3ebe3b240d378628637984c2ab}{bands}}
+\begin{DoxyCompactList}\small\item\em representation of boundaries of table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ad556109c495c044e7bed3a54e600375d}\label{classGame_ad556109c495c044e7bed3a54e600375d}} 
+double \mbox{\hyperlink{classGame_ad556109c495c044e7bed3a54e600375d}{alpha}} =0
+\begin{DoxyCompactList}\small\item\em angle of cues rotation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_aac7e5a143a0b361f5585116c11b7968e}\label{classGame_aac7e5a143a0b361f5585116c11b7968e}} 
+double \mbox{\hyperlink{classGame_aac7e5a143a0b361f5585116c11b7968e}{power}} = 0
+\begin{DoxyCompactList}\small\item\em power of strike \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ae1c6fd535e2d68ed65b7e8fa1ff396ff}\label{classGame_ae1c6fd535e2d68ed65b7e8fa1ff396ff}} 
+bool \mbox{\hyperlink{classGame_ae1c6fd535e2d68ed65b7e8fa1ff396ff}{first\+\_\+hit}} = true
+\begin{DoxyCompactList}\small\item\em flag set if white ball didn\textquotesingle{}t hit any other ball in current turn \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ab01bca190e0350c041c5c1466efb2fbd}\label{classGame_ab01bca190e0350c041c5c1466efb2fbd}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$ \mbox{\hyperlink{classGame_ab01bca190e0350c041c5c1466efb2fbd}{player\+\_\+one\+\_\+balls}}
+\begin{DoxyCompactList}\small\item\em pointer used for R\+T\+TI idenfification of balls belonging to player 1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_acd41ff1f31f519ef2f44ab6b98eb9dca}\label{classGame_acd41ff1f31f519ef2f44ab6b98eb9dca}} 
+bool \mbox{\hyperlink{classGame_acd41ff1f31f519ef2f44ab6b98eb9dca}{balls\+\_\+assigned}} = false
+\begin{DoxyCompactList}\small\item\em flag set to true if balls have been assigned, used for faul checking and sanity checks to not try typeid on nullptr \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a900d91db0f0d225c477e550f20bb96c0}\label{classGame_a900d91db0f0d225c477e550f20bb96c0}} 
+bool \mbox{\hyperlink{classGame_a900d91db0f0d225c477e550f20bb96c0}{break\+\_\+shot}} = true
+\begin{DoxyCompactList}\small\item\em flag set if it is first shot of the game \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a3a67c355a191833b2e4ed10d3758a2ad}\label{classGame_a3a67c355a191833b2e4ed10d3758a2ad}} 
+bool \mbox{\hyperlink{classGame_a3a67c355a191833b2e4ed10d3758a2ad}{right\+\_\+ball\+\_\+pocketed}} = false
+\begin{DoxyCompactList}\small\item\em flag set if player pocketed at least one of his balls in current turn \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a7ba21f260cf85b707738b51b6baf5850}\label{classGame_a7ba21f260cf85b707738b51b6baf5850}} 
+bool \mbox{\hyperlink{classGame_a7ba21f260cf85b707738b51b6baf5850}{black\+\_\+out\+\_\+of\+\_\+table}} = false
+\begin{DoxyCompactList}\small\item\em flag set if black ball has been pocketed, pocketing it after break shot means end of the game \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_ad7be679d31db980e5bf5291ddb2958ec}\label{classGame_ad7be679d31db980e5bf5291ddb2958ec}} 
+bool \mbox{\hyperlink{classGame_ad7be679d31db980e5bf5291ddb2958ec}{foul}} = false
+\begin{DoxyCompactList}\small\item\em flag set if foul has been commited in current turn \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a4ac81fae35de109af1cc598a6a62e175}\label{classGame_a4ac81fae35de109af1cc598a6a62e175}} 
+bool \mbox{\hyperlink{classGame_a4ac81fae35de109af1cc598a6a62e175}{ball\+\_\+pocketed}}
+\begin{DoxyCompactList}\small\item\em flag set if any ball has been pocketed in current turn -\/ exception to foul when no ball hits band \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGame_a199c6b53a7a72633ebab93292fd8358d}\label{classGame_a199c6b53a7a72633ebab93292fd8358d}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries Player1}
+\item 
+\mbox{\Hypertarget{classGame_aa6d85c284c336275f8719d866dc4257b}\label{classGame_aa6d85c284c336275f8719d866dc4257b}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries Player2}
+\item 
+\mbox{\Hypertarget{classGame_a016271b349c19ed0d81ead4affc32f6f}\label{classGame_a016271b349c19ed0d81ead4affc32f6f}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries ball\+\_\+in\+\_\+hand}
+\item 
+\mbox{\Hypertarget{classGame_adde475b2c4c5888ae820b7dc58f4615a}\label{classGame_adde475b2c4c5888ae820b7dc58f4615a}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries failed\+\_\+to\+\_\+hit\+\_\+ball}
+\item 
+\mbox{\Hypertarget{classGame_a4c63df99427b56cb421010b225960a83}\label{classGame_a4c63df99427b56cb421010b225960a83}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries failed\+\_\+to\+\_\+hit\+\_\+band}
+\item 
+\mbox{\Hypertarget{classGame_a142d556645baf05d2946717b8fe3247f}\label{classGame_a142d556645baf05d2946717b8fe3247f}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries foul\+\_\+message}
+\item 
+\mbox{\Hypertarget{classGame_ab3e848d587a2c35a72d21bfa1b20bfd2}\label{classGame_ab3e848d587a2c35a72d21bfa1b20bfd2}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries Player1wins}
+\item 
+\mbox{\Hypertarget{classGame_a8c0d32dbce1b7e3cef7f1ae5a6269fc5}\label{classGame_a8c0d32dbce1b7e3cef7f1ae5a6269fc5}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries Player2wins}
+\item 
+\mbox{\Hypertarget{classGame_abcd7609aaf2155a3d5874dbc37e6f810}\label{classGame_abcd7609aaf2155a3d5874dbc37e6f810}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries pocketed\+\_\+cue\+\_\+ball}
+\item 
+\mbox{\Hypertarget{classGame_a3c47c009a478cf44de2a736b6fa56aae}\label{classGame_a3c47c009a478cf44de2a736b6fa56aae}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries solids1}
+\item 
+\mbox{\Hypertarget{classGame_a3527e00393e813957298003e76d76cdb}\label{classGame_a3527e00393e813957298003e76d76cdb}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries solids2}
+\item 
+\mbox{\Hypertarget{classGame_a8428df8f8b84a1e338ff488b9d699368}\label{classGame_a8428df8f8b84a1e338ff488b9d699368}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ {\bfseries stripes1}
+\item 
+\mbox{\Hypertarget{classGame_ac87b6a0fae841bedf04440454cc09e07}\label{classGame_ac87b6a0fae841bedf04440454cc09e07}} 
+\mbox{\hyperlink{classTextField}{Text\+Field}} $\ast$ \mbox{\hyperlink{classGame_ac87b6a0fae841bedf04440454cc09e07}{stripes2}}
+\begin{DoxyCompactList}\small\item\em pointers to text fields that can be visible on screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_aff34a635f776289ee8fb112e4ac9eaed}\label{classGame_aff34a635f776289ee8fb112e4ac9eaed}} 
+class {\bfseries Ball}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_a0740c7ec659381d9214400be2d50bb3b}\label{classGame_a0740c7ec659381d9214400be2d50bb3b}} 
+\index{Game@{Game}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture $\ast$ Game\+::load\+Texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+function loading textures from files 
+\begin{DoxyParams}{Parameters}
+{\em fname} & name of the graphics file to be loaded as texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to S\+DL texture 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_8h}{classes.\+h}}\item 
+classes.\+cpp\end{DoxyCompactItemize}

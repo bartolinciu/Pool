@@ -1,0 +1,110 @@
+\hypertarget{classTextField}{}\doxysection{Text\+Field Class Reference}
+\label{classTextField}\index{TextField@{TextField}}
+
+
+{\ttfamily \#include $<$classes.\+h$>$}
+
+
+
+Collaboration diagram for Text\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classTextField__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTextField_afc4d24d29902a954c1df04544df70349}{Text\+Field}} (S\+D\+L\+\_\+\+Renderer $\ast$\mbox{\hyperlink{classTextField_a9058ae54e8ff6616bca846ad596bbe45}{r}}, const char $\ast$text, T\+T\+F\+\_\+\+Font $\ast$font, int \mbox{\hyperlink{classTextField_a9116db5c052afcd59ef353bc1d7f1755}{x}}, int \mbox{\hyperlink{classTextField_a815f688835157276f0db524f07800c82}{y}})
+\item 
+void \mbox{\hyperlink{classTextField_a793910a36e502ac1b347ae08b1bc7179}{draw}} (Uint32 dt)
+\item 
+\mbox{\Hypertarget{classTextField_a0b191ca2b2ab3c83a0e26b65fe4a8ee8}\label{classTextField_a0b191ca2b2ab3c83a0e26b65fe4a8ee8}} 
+void \mbox{\hyperlink{classTextField_a0b191ca2b2ab3c83a0e26b65fe4a8ee8}{hide}} ()
+\begin{DoxyCompactList}\small\item\em function hiding text field \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_ab1a341d9be4ad5de5a9f38678c7b7685}\label{classTextField_ab1a341d9be4ad5de5a9f38678c7b7685}} 
+void \mbox{\hyperlink{classTextField_ab1a341d9be4ad5de5a9f38678c7b7685}{show}} ()
+\begin{DoxyCompactList}\small\item\em function showing text field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTextField_a75fb0e16d857fa0af4c65d0c15b26183}{set\+Timeout}} (int \mbox{\hyperlink{classTextField_a98732622c1805b7afb1a42b6e775bbc1}{timeout}})
+\item 
+\mbox{\Hypertarget{classTextField_a853eef86772f3be5ee5f123a78ebdd07}\label{classTextField_a853eef86772f3be5ee5f123a78ebdd07}} 
+\mbox{\hyperlink{classTextField_a853eef86772f3be5ee5f123a78ebdd07}{$\sim$\+Text\+Field}} ()
+\begin{DoxyCompactList}\small\item\em destructor needed to destroy texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTextField_a9058ae54e8ff6616bca846ad596bbe45}\label{classTextField_a9058ae54e8ff6616bca846ad596bbe45}} 
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{classTextField_a9058ae54e8ff6616bca846ad596bbe45}{r}}
+\begin{DoxyCompactList}\small\item\em pointer to S\+DL rendering context \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_a40478dbe81a344137e4d4a2285ab546d}\label{classTextField_a40478dbe81a344137e4d4a2285ab546d}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{classTextField_a40478dbe81a344137e4d4a2285ab546d}{t}}
+\begin{DoxyCompactList}\small\item\em pointer to texture containing text \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_a98732622c1805b7afb1a42b6e775bbc1}\label{classTextField_a98732622c1805b7afb1a42b6e775bbc1}} 
+int \mbox{\hyperlink{classTextField_a98732622c1805b7afb1a42b6e775bbc1}{timeout}}
+\begin{DoxyCompactList}\small\item\em time left to vanish, -\/1 if text shouldn\textquotesingle{}t be timed out \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_af322dc8f4f776c23d1216841259203c9}\label{classTextField_af322dc8f4f776c23d1216841259203c9}} 
+bool \mbox{\hyperlink{classTextField_af322dc8f4f776c23d1216841259203c9}{visible}}
+\begin{DoxyCompactList}\small\item\em flag set if text should be visible \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_a9116db5c052afcd59ef353bc1d7f1755}\label{classTextField_a9116db5c052afcd59ef353bc1d7f1755}} 
+int \mbox{\hyperlink{classTextField_a9116db5c052afcd59ef353bc1d7f1755}{x}}
+\begin{DoxyCompactList}\small\item\em x coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextField_a815f688835157276f0db524f07800c82}\label{classTextField_a815f688835157276f0db524f07800c82}} 
+int \mbox{\hyperlink{classTextField_a815f688835157276f0db524f07800c82}{y}}
+\begin{DoxyCompactList}\small\item\em y coordinate \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for rendering text on screen 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTextField_afc4d24d29902a954c1df04544df70349}\label{classTextField_afc4d24d29902a954c1df04544df70349}} 
+\index{TextField@{TextField}!TextField@{TextField}}
+\index{TextField@{TextField}!TextField@{TextField}}
+\doxysubsubsection{\texorpdfstring{TextField()}{TextField()}}
+{\footnotesize\ttfamily Text\+Field\+::\+Text\+Field (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{r,  }\item[{const char $\ast$}]{text,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+constructor assigning values to the text field and generating the texture from text 
+\begin{DoxyParams}{Parameters}
+{\em r} & pointer to S\+DL rendering context \\
+\hline
+{\em text} & constant text to be rendered by this field \\
+\hline
+{\em font} & pointer to font \\
+\hline
+{\em x} & x coordinate \\
+\hline
+{\em y} & y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextField_a793910a36e502ac1b347ae08b1bc7179}\label{classTextField_a793910a36e502ac1b347ae08b1bc7179}} 
+\index{TextField@{TextField}!draw@{draw}}
+\index{draw@{draw}!TextField@{TextField}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Text\+Field\+::draw (\begin{DoxyParamCaption}\item[{Uint32}]{dt }\end{DoxyParamCaption})}
+
+function responsible for drawing visible text field and updating time left on screen 
+\begin{DoxyParams}{Parameters}
+{\em dt} & time elapsed since last call to this function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextField_a75fb0e16d857fa0af4c65d0c15b26183}\label{classTextField_a75fb0e16d857fa0af4c65d0c15b26183}} 
+\index{TextField@{TextField}!setTimeout@{setTimeout}}
+\index{setTimeout@{setTimeout}!TextField@{TextField}}
+\doxysubsubsection{\texorpdfstring{setTimeout()}{setTimeout()}}
+{\footnotesize\ttfamily void Text\+Field\+::set\+Timeout (\begin{DoxyParamCaption}\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+function setting text field\textquotesingle{}s timeout 
+\begin{DoxyParams}{Parameters}
+{\em timeout} & time for which the text field will be visible on screen, -\/1 for infinite \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_8h}{classes.\+h}}\item 
+classes.\+cpp\end{DoxyCompactItemize}

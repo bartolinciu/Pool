@@ -1,0 +1,193 @@
+\hypertarget{classBall}{}\doxysection{Ball Class Reference}
+\label{classBall}\index{Ball@{Ball}}
+
+
+{\ttfamily \#include $<$balls.\+h$>$}
+
+
+
+Inheritance diagram for Ball\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ball\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classBall__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBall_a02bb7631f15e7e905f71e6d53fc36cce}{Ball}} (double \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}, double \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}, int \mbox{\hyperlink{classBall_a930e88b960f8d0020dc5e46caa489066}{id}})
+\item 
+void \mbox{\hyperlink{classBall_ad24ee175f96fb4bdd473288a74570200}{update}} (Uint32 dt)
+\item 
+void \mbox{\hyperlink{classBall_a563a4197ede28d4d1f59d3938ea0572d}{draw}} (\mbox{\hyperlink{classGame}{Game}} $\ast$r)
+\item 
+bool \mbox{\hyperlink{classBall_a3fb38769d496865cbfd27f30e5c70f7e}{check\+\_\+collision}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$ b)
+\item 
+void \mbox{\hyperlink{classBall_ac3d99d5699950f59e2f5f63ee5e99bda}{collide}} (\mbox{\hyperlink{classSegment}{Segment}} $\ast$s)
+\item 
+void \mbox{\hyperlink{classBall_aeef488f786802ef1f5a1445e68646298}{collide}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$ b)
+\item 
+bool \mbox{\hyperlink{classBall_a807f2c507709a01c97eb6990f997f6ca}{check\+\_\+for\+\_\+pocket}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBall_a8b800439e5cea0280bb2fdeed7fc7f98}\label{classBall_a8b800439e5cea0280bb2fdeed7fc7f98}} 
+virtual void \mbox{\hyperlink{classBall_a8b800439e5cea0280bb2fdeed7fc7f98}{pocket}} ()
+\begin{DoxyCompactList}\small\item\em action taken after pocketing a ball, different for \char`\"{}normal\char`\"{} balls, cue ball and for eight ball \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBall_a930e88b960f8d0020dc5e46caa489066}\label{classBall_a930e88b960f8d0020dc5e46caa489066}} 
+int \mbox{\hyperlink{classBall_a930e88b960f8d0020dc5e46caa489066}{id}}
+\begin{DoxyCompactList}\small\item\em Billard balls are numbered, cue ball is assumed to have id 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBall_a60894aab5e27e93bacf2393b9110a049}\label{classBall_a60894aab5e27e93bacf2393b9110a049}} 
+double \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}
+\begin{DoxyCompactList}\small\item\em x coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBall_a17d73231eab81d0e74cf28d0068fe5cb}\label{classBall_a17d73231eab81d0e74cf28d0068fe5cb}} 
+double \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}
+\begin{DoxyCompactList}\small\item\em y coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBall_a4cc3e6d17874d6a99d72657af3bd3a33}\label{classBall_a4cc3e6d17874d6a99d72657af3bd3a33}} 
+double \mbox{\hyperlink{classBall_a4cc3e6d17874d6a99d72657af3bd3a33}{vx}}
+\begin{DoxyCompactList}\small\item\em x component of velocity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBall_aa58f7f56586df265f2fd1d56ce1f0504}\label{classBall_aa58f7f56586df265f2fd1d56ce1f0504}} 
+double \mbox{\hyperlink{classBall_aa58f7f56586df265f2fd1d56ce1f0504}{vy}}
+\begin{DoxyCompactList}\small\item\em y component of velocity \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBall_a7485b525a98c5dcf8dcd63b996400b65}{on\+\_\+table}}
+\item 
+bool \mbox{\hyperlink{classBall_a986fc75793c424c9443bfe06fef9da37}{hit\+\_\+band}}
+\item 
+\mbox{\Hypertarget{classBall_ad973efe00813b4f2ce430a2c2d77a6c5}\label{classBall_ad973efe00813b4f2ce430a2c2d77a6c5}} 
+bool \mbox{\hyperlink{classBall_ad973efe00813b4f2ce430a2c2d77a6c5}{moving}}
+\begin{DoxyCompactList}\small\item\em flag set to true if ball is moving -\/ used to determine end of turn \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBall_a3686fc7786dbff5d4f068e021ebacdca}\label{classBall_a3686fc7786dbff5d4f068e021ebacdca}} 
+class {\bfseries Segment}
+\item 
+\mbox{\Hypertarget{classBall_aa2fab026580d6f14280c2ffb8063a314}\label{classBall_aa2fab026580d6f14280c2ffb8063a314}} 
+class {\bfseries Game}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing basic billard ball 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBall_a02bb7631f15e7e905f71e6d53fc36cce}\label{classBall_a02bb7631f15e7e905f71e6d53fc36cce}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+ball requires specifying position and balls number 
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate \\
+\hline
+{\em y} & y coordinate \\
+\hline
+{\em id} & number of the ball \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBall_a3fb38769d496865cbfd27f30e5c70f7e}\label{classBall_a3fb38769d496865cbfd27f30e5c70f7e}} 
+\index{Ball@{Ball}!check\_collision@{check\_collision}}
+\index{check\_collision@{check\_collision}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{check\_collision()}{check\_collision()}}
+{\footnotesize\ttfamily bool Ball\+::check\+\_\+collision (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$}]{b }\end{DoxyParamCaption})}
+
+function responsible for checking if collision with ball b occured 
+\begin{DoxyParams}{Parameters}
+{\em b} & shared pointer to ball to check collisions against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the collision occured 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBall_a807f2c507709a01c97eb6990f997f6ca}\label{classBall_a807f2c507709a01c97eb6990f997f6ca}} 
+\index{Ball@{Ball}!check\_for\_pocket@{check\_for\_pocket}}
+\index{check\_for\_pocket@{check\_for\_pocket}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{check\_for\_pocket()}{check\_for\_pocket()}}
+{\footnotesize\ttfamily bool Ball\+::check\+\_\+for\+\_\+pocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function checking if ball has been pocketed \begin{DoxyReturn}{Returns}
+function returns true if the ball has been pocketed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBall_ac3d99d5699950f59e2f5f63ee5e99bda}\label{classBall_ac3d99d5699950f59e2f5f63ee5e99bda}} 
+\index{Ball@{Ball}!collide@{collide}}
+\index{collide@{collide}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{collide()}{collide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ball\+::collide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSegment}{Segment}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+function responsible for handling collision with segment 
+\begin{DoxyParams}{Parameters}
+{\em s} & pointer to segment to collide with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBall_aeef488f786802ef1f5a1445e68646298}\label{classBall_aeef488f786802ef1f5a1445e68646298}} 
+\index{Ball@{Ball}!collide@{collide}}
+\index{collide@{collide}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{collide()}{collide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ball\+::collide (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBall}{Ball}} $>$}]{b }\end{DoxyParamCaption})}
+
+function responsible for handling collision with other ball 
+\begin{DoxyParams}{Parameters}
+{\em b} & shared pointer to ball to collide with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBall_a563a4197ede28d4d1f59d3938ea0572d}\label{classBall_a563a4197ede28d4d1f59d3938ea0572d}} 
+\index{Ball@{Ball}!draw@{draw}}
+\index{draw@{draw}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Ball\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGame}{Game}} $\ast$}]{r }\end{DoxyParamCaption})}
+
+function responsible for displaying the ball 
+\begin{DoxyParams}{Parameters}
+{\em r} & pointer to \mbox{\hyperlink{classGame}{Game}} object holding apropriate rendering context \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBall_ad24ee175f96fb4bdd473288a74570200}\label{classBall_ad24ee175f96fb4bdd473288a74570200}} 
+\index{Ball@{Ball}!update@{update}}
+\index{update@{update}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}\item[{Uint32}]{dt }\end{DoxyParamCaption})}
+
+function responsible for physics and checking for potting and fauls 
+\begin{DoxyParams}{Parameters}
+{\em dt} & time elapsed from last update in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBall_a986fc75793c424c9443bfe06fef9da37}\label{classBall_a986fc75793c424c9443bfe06fef9da37}} 
+\index{Ball@{Ball}!hit\_band@{hit\_band}}
+\index{hit\_band@{hit\_band}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{hit\_band}{hit\_band}}
+{\footnotesize\ttfamily bool Ball\+::hit\+\_\+band\hspace{0.3cm}{\ttfamily [protected]}}
+
+this flag is set to true if ball hit the band in this turn to check if the faul has been commited \mbox{\Hypertarget{classBall_a7485b525a98c5dcf8dcd63b996400b65}\label{classBall_a7485b525a98c5dcf8dcd63b996400b65}} 
+\index{Ball@{Ball}!on\_table@{on\_table}}
+\index{on\_table@{on\_table}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{on\_table}{on\_table}}
+{\footnotesize\ttfamily bool Ball\+::on\+\_\+table\hspace{0.3cm}{\ttfamily [protected]}}
+
+this flag is true if ball is still in the game, if it\textquotesingle{}s false the ball isn\textquotesingle{}t drawn neither checked for collisions 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{balls_8h}{balls.\+h}}\item 
+balls.\+cpp\end{DoxyCompactItemize}

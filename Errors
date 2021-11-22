@@ -1,0 +1,348 @@
+$ make
+g++ -std=c++17 -ggdb   -c -o classes.o code/classes.cpp
+code/classes.cpp: In constructor 'Game::Game()':
+code/classes.cpp:127:5: error: 'TTF_Init' was not declared in this scope
+  if(TTF_Init()==-1) {
+     ^~~~~~~~
+code/classes.cpp:127:5: note: suggested alternative: 'IMG_Init'
+  if(TTF_Init()==-1) {
+     ^~~~~~~~
+     IMG_Init
+code/classes.cpp:128:66: error: 'TTF_GetError' was not declared in this scope
+      printf("SDL_TTF could not initialize! SDL_TTF Error: %s\n", TTF_GetError());
+                                                                  ^~~~~~~~~~~~
+code/classes.cpp:128:66: note: suggested alternative: 'SDL_GetError'
+      printf("SDL_TTF could not initialize! SDL_TTF Error: %s\n", TTF_GetError());
+                                                                  ^~~~~~~~~~~~
+                                                                  SDL_GetError
+code/classes.cpp:132:2: error: 'TTF_Font' was not declared in this scope
+  TTF_Font * font;
+  ^~~~~~~~
+code/classes.cpp:132:13: error: 'font' was not declared in this scope
+  TTF_Font * font;
+             ^~~~
+code/classes.cpp:132:13: note: suggested alternative: 'foul'
+  TTF_Font * font;
+             ^~~~
+             foul
+code/classes.cpp:134:15: error: 'TTF_OpenFont' was not declared in this scope
+  if(! (font = TTF_OpenFont("kg-ten-thousand-reasons.regular.ttf", 32) ) ){
+               ^~~~~~~~~~~~
+code/classes.cpp:135:35: error: 'TTF_GetError' was not declared in this scope
+      printf("TTF_OpenFont: %s\n", TTF_GetError());
+                                   ^~~~~~~~~~~~
+code/classes.cpp:135:35: note: suggested alternative: 'SDL_GetError'
+      printf("TTF_OpenFont: %s\n", TTF_GetError());
+                                   ^~~~~~~~~~~~
+                                   SDL_GetError
+code/classes.cpp:140:16: error: request for member 'show' in '((Game*)this)->Game::Player1', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+  this->Player1.show();
+                ^~~~
+code/classes.cpp: In member function 'void Game::run()':
+code/classes.cpp:159:17: error: request for member 'draw' in '((Game*)this)->Game::Player1', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+   this->Player1.draw( dt );
+                 ^~~~
+code/classes.cpp:160:17: error: request for member 'draw' in '((Game*)this)->Game::Player2', which is of pointer type 'TextField*' (maybe you meant to use '->' ?)
+   this->Player2.draw( dt );
+                 ^~~~
+code/classes.cpp:204:42: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'const std::type_info')
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:108:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:117:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:127:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'std::ios_base& (*)(std::ios_base&)'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:166:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'long int'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:170:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'long unsigned int'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:174:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'bool'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:666:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from 'const std::type_info' to 'short int'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:181:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'short unsigned int'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:666:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from 'const std::type_info' to 'int'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:192:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'unsigned int'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:201:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'long long int'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:205:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'long long unsigned int'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:220:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'double'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:224:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'float'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:232:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'long double'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:245:7: note:   no known conversion for argument 1 from 'const std::type_info' to 'const void*'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:666:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from 'const std::type_info' to 'std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/memory:81:0,
+                 from code/balls.h:6,
+                 from code/classes.h:8,
+                 from code/classes.cpp:11:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/shared_ptr.h:66:5: note: candidate: template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/shared_ptr.h:66:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   'const std::type_info' is not derived from 'const std::__shared_ptr<_Tp, _Lp>'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:656:5: note: candidate: template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<_Ostream&, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:656:5: note:   template argument deduction/substitution failed:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream: In substitution of 'template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<_Ostream&, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = std::type_info]':
+code/classes.cpp:204:77:   required from here
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:656:5: error: no type named 'type' in 'struct std::enable_if<false, std::basic_ostream<char>&>'
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:574:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'const unsigned char*'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:569:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'const signed char*'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:556:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'const char*'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:666:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'const char*'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:539:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   mismatched types 'const _CharT*' and 'std::type_info'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:519:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'unsigned char'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:514:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'signed char'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:508:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'char'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:502:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'char'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39:0,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:497:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   deduced conflicting types for parameter '_CharT' ('char' and 'std::type_info')
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ios_base.h:46:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ios:42,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:38,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/system_error:217:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/system_error:217:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   cannot convert '(((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*()) != 0) ? (*(const std::type_info*)(*((&((std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>*)(&((Game*)this)->Game::player_one_balls))->std::__shared_ptr_access<Ball, (__gnu_cxx::_Lock_policy)2, false, false>::operator*())->Ball::_vptr.Ball + 18446744073709551608))) : __cxa_bad_typeid())' (type 'const std::type_info') to type 'const std::error_code&'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/string:52:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/locale_classes.h:40,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ios_base.h:41,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ios:42,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:38,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/basic_string.h:6082:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/basic_string.h:6082:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   'const std::type_info' is not derived from 'const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+In file included from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/basic_string.h:48:0,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/string:52,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/locale_classes.h:40,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/ios_base.h:41,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ios:42,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/ostream:38,
+                 from D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/iostream:39,
+                 from code/classes.cpp:1:
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/string_view:558:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+D:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/string_view:558:5: note:   template argument deduction/substitution failed:
+code/classes.cpp:204:77: note:   'std::type_info' is not derived from 'std::basic_string_view<_CharT, _Traits>'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                             ^
+code/classes.cpp:204:121: error: invalid operands of types 'const char [8]' and '<unresolved overloaded function type>' to binary 'operator<<'
+          std::cout<<"Player one playes: "<< typeid( *this->player_one_balls ) == typeid( Solid ) ? "solids" : "stripes" <<std::endl;
+                                                                                                               ~~~~~~~~~~^~~~~
+code/classes.cpp:265:23: error: expected primary-expression before ')' token
+   if(  !hit_band && ! ){
+                       ^
+code/classes.cpp: At global scope:
+code/classes.cpp:506:53: error: 'TTF_Font' has not been declared
+ SDL_Texture* renderTextToTexture( const char* text, TTF_Font* font ){
+                                                     ^~~~~~~~
+code/classes.cpp: In function 'SDL_Texture* renderTextToTexture(const char*, int*)':
+code/classes.cpp:509:20: error: 'TTF_RenderUTF8_Blended' was not declared in this scope
+     text_surface = TTF_RenderUTF8_Blended(font, text, {0,0,0,255});
+                    ^~~~~~~~~~~~~~~~~~~~~~
+code/classes.cpp:514:61: error: 'r' was not declared in this scope
+     SDL_Texture* newTexture = SDL_CreateTextureFromSurface( r, {text_surface} );
+                                                             ^
+code/classes.cpp: At global scope:
+code/classes.cpp:522:58: error: 'TTF_Font' has not been declared
+ TextField::TextField( SDL_Renderer *r, const char* text, TTF_Font *font, int x, int y ):r(r), x(x), y(y), visible(false), timeout(-1){
+                                                          ^~~~~~~~
+code/classes.cpp:522:1: error: prototype for 'TextField::TextField(SDL_Renderer*, const char*, int*, int, int)' does not match any in class 'TextField'
+ TextField::TextField( SDL_Renderer *r, const char* text, TTF_Font *font, int x, int y ):r(r), x(x), y(y), visible(false), timeout(-1){
+ ^~~~~~~~~
+In file included from code/classes.cpp:11:0:
+code/classes.h:41:7: error: candidates are: constexpr TextField::TextField(const TextField&)
+ class TextField{
+       ^~~~~~~~~
+code/classes.h:50:2: error:                 TextField::TextField(SDL_Renderer*, const char*, int, int)
+  TextField( SDL_Renderer *r, const char* text, int x, int y );
+  ^~~~~~~~~
+code/classes.cpp: In function 'void draw(Uint32)':
+code/classes.cpp:537:7: error: invalid use of 'this' in non-member function
+  if( !this->visible )
+       ^~~~
+code/classes.cpp:539:6: error: invalid use of 'this' in non-member function
+  if( this->timeout != -1 ){
+      ^~~~
+code/classes.cpp:540:3: error: invalid use of 'this' in non-member function
+   this->timeout -= dt;
+   ^~~~
+code/classes.cpp:541:7: error: invalid use of 'this' in non-member function
+   if( this->timeout < 0 ){
+       ^~~~
+code/classes.cpp:542:4: error: invalid use of 'this' in non-member function
+    this->timeout = -1;
+    ^~~~
+code/classes.cpp:543:4: error: invalid use of 'this' in non-member function
+    this->visible = false;
+    ^~~~
+code/classes.cpp:549:10: error: invalid use of 'this' in non-member function
+  pos.x = this->x;
+          ^~~~
+code/classes.cpp:550:10: error: invalid use of 'this' in non-member function
+  pos.y = this->y;
+          ^~~~
+code/classes.cpp:552:20: error: invalid use of 'this' in non-member function
+  SDL_QueryTexture( this->t, NULL, NULL, &pos.w, &pos.h );
+                    ^~~~
+code/classes.cpp:554:18: error: invalid use of 'this' in non-member function
+  SDL_RenderCopy( this->r, this->t, NULL, &pos );
+                  ^~~~
+code/classes.cpp:554:27: error: invalid use of 'this' in non-member function
+  SDL_RenderCopy( this->r, this->t, NULL, &pos );
+                           ^~~~
+make: *** [classes.o] Error 1
